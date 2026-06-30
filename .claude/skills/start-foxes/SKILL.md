@@ -13,6 +13,8 @@ This project is a React (Vite) frontend + Express API backend that run together 
 
 ## Steps
 
+0. **Ensure Node 20+.** The tooling (Vite 8, react-router 7, etc.) requires Node >= 20. Check with `node --version`; if it's older, switch with nvm: `nvm install 22 && nvm use 22 && nvm alias default 22` (an `.nvmrc` pinning `22` is in the repo, so `nvm use` alone works too). A crash like `yargs parser supports a minimum Node.js version of 20` means Node is too old.
+
 1. **Ensure dependencies are installed.** If `node_modules/` is missing, run `npm install` first.
 
    ```bash
