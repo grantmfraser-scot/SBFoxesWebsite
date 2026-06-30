@@ -15,8 +15,8 @@ export default function Table() {
   return (
     <div style={{ paddingTop: 70, minHeight: '100vh' }}>
       <div style={{
-        background: 'linear-gradient(180deg, rgba(255,102,0,0.15) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,102,0,0.2)',
+        background: 'linear-gradient(180deg, rgba(233,124,48,0.15) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(233,124,48,0.2)',
         padding: '3rem 0 2rem',
       }}>
         <div className="container">
@@ -42,7 +42,7 @@ export default function Table() {
                   {['#', 'Team', 'P', 'W', 'D', 'L', 'GF', 'GA', 'GD', 'Pts'].map(h => (
                     <th key={h} style={{
                       padding: '0.75rem 1rem', textAlign: h === 'Team' ? 'left' : 'center',
-                      color: 'var(--orange)', fontFamily: 'Bebas Neue', fontSize: '1rem', letterSpacing: '0.05em',
+                      color: 'var(--orange)', fontFamily: 'Poppins', fontSize: '1rem', letterSpacing: '0.05em',
                       whiteSpace: 'nowrap',
                     }}>{h}</th>
                   ))}
@@ -53,7 +53,7 @@ export default function Table() {
                   const isFoxes = row.team?.toLowerCase().includes('foxes') || row.team?.toLowerCase().includes('streatham') || row.team?.toLowerCase().includes('balham')
                   return (
                     <tr key={i} style={{
-                      background: isFoxes ? 'rgba(255,102,0,0.1)' : i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent',
+                      background: isFoxes ? 'rgba(233,124,48,0.1)' : i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent',
                       borderBottom: '1px solid rgba(255,255,255,0.05)',
                       transition: 'background 0.15s',
                     }}
@@ -61,7 +61,7 @@ export default function Table() {
                       onMouseLeave={e => { if (!isFoxes) e.currentTarget.style.background = i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}
                     >
                       <td style={{ padding: '0.85rem 1rem', textAlign: 'center', width: 50 }}>
-                        <span style={{ fontFamily: 'Bebas Neue', fontSize: '1.1rem', color: i < 3 ? 'var(--orange)' : 'var(--gray)' }}>
+                        <span style={{ fontFamily: 'Poppins', fontSize: '1.1rem', color: i < 3 ? 'var(--orange)' : 'var(--gray)' }}>
                           {posIcon(row.position)}
                         </span>
                       </td>

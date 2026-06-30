@@ -9,8 +9,8 @@ export default function Gallery() {
   return (
     <div style={{ paddingTop: 70, minHeight: '100vh' }}>
       <div style={{
-        background: 'linear-gradient(180deg, rgba(255,102,0,0.15) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,102,0,0.2)',
+        background: 'linear-gradient(180deg, rgba(233,124,48,0.15) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(233,124,48,0.2)',
         padding: '3rem 0 2rem',
       }}>
         <div className="container">

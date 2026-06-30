@@ -40,18 +40,18 @@ export default function Home() {
         {/* Animated background */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,102,0,0.2) 0%, transparent 70%), linear-gradient(180deg, var(--black) 0%, #1a0800 100%)',
+          background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(233,124,48,0.2) 0%, transparent 70%), linear-gradient(180deg, var(--black) 0%, #0a1726 100%)',
         }} />
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,102,0,0.03) 50px, rgba(255,102,0,0.03) 51px), repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,102,0,0.03) 50px, rgba(255,102,0,0.03) 51px)',
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(233,124,48,0.03) 50px, rgba(233,124,48,0.03) 51px), repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(233,124,48,0.03) 50px, rgba(233,124,48,0.03) 51px)',
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '4rem', paddingBottom: '4rem' }}>
           <div style={{ maxWidth: 700 }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              background: 'rgba(255,102,0,0.12)', border: '1px solid rgba(255,102,0,0.3)',
+              background: 'rgba(233,124,48,0.12)', border: '1px solid rgba(233,124,48,0.3)',
               borderRadius: 100, padding: '0.4rem 1rem', marginBottom: '1.5rem',
               fontSize: '0.8rem', color: 'var(--orange)', letterSpacing: '0.1em', textTransform: 'uppercase',
             }}>
@@ -83,7 +83,7 @@ export default function Home() {
               {latestResult && (
                 <div style={{
                   background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,102,0,0.2)', borderRadius: 8,
+                  border: '1px solid rgba(233,124,48,0.2)', borderRadius: 8,
                   padding: '1.25rem 1.5rem', minWidth: 280,
                 }}>
                   <div style={{ fontSize: '0.7rem', color: 'var(--orange)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -98,7 +98,7 @@ export default function Home() {
               {nextFixture && (
                 <div style={{
                   background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,102,0,0.2)', borderRadius: 8,
+                  border: '1px solid rgba(233,124,48,0.2)', borderRadius: 8,
                   padding: '1.25rem 1.5rem', minWidth: 280,
                 }}>
                   <div style={{ fontSize: '0.7rem', color: 'var(--orange)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
@@ -128,11 +128,11 @@ export default function Home() {
                   <div key={i} className="card" style={{
                     padding: '1.5rem',
                     border: isFoxes ? '1px solid var(--orange)' : undefined,
-                    background: isFoxes ? 'rgba(255,102,0,0.08)' : undefined,
+                    background: isFoxes ? 'rgba(233,124,48,0.08)' : undefined,
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                      <span style={{ fontFamily: 'Bebas Neue', fontSize: '3rem', color: isFoxes ? 'var(--orange)' : 'rgba(255,255,255,0.15)', lineHeight: 1 }}>{i + 1}</span>
-                      {isFoxes && <span style={{ fontSize: '0.75rem', color: 'var(--orange)', background: 'rgba(255,102,0,0.15)', padding: '0.2rem 0.5rem', borderRadius: 3 }}>OUR TEAM</span>}
+                      <span style={{ fontFamily: 'Poppins', fontSize: '3rem', color: isFoxes ? 'var(--orange)' : 'rgba(255,255,255,0.15)', lineHeight: 1 }}>{i + 1}</span>
+                      {isFoxes && <span style={{ fontSize: '0.75rem', color: 'var(--orange)', background: 'rgba(233,124,48,0.15)', padding: '0.2rem 0.5rem', borderRadius: 3 }}>OUR TEAM</span>}
                     </div>
                     <div style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '0.5rem' }}>{team.team}</div>
                     <div style={{ display: 'flex', gap: '1.5rem', color: 'var(--gray)', fontSize: '0.8rem' }}>
@@ -167,7 +167,7 @@ export default function Home() {
                     <div style={{ fontSize: '0.75rem', color: 'var(--orange)', marginBottom: '0.5rem' }}>
                       {format(parseISO(post.created_at), 'dd MMM yyyy')}
                     </div>
-                    <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '1.3rem', marginBottom: '0.5rem' }}>{post.title}</h3>
+                    <h3 style={{ fontFamily: 'Poppins', fontSize: '1.3rem', marginBottom: '0.5rem' }}>{post.title}</h3>
                     <p style={{ color: 'var(--gray)', fontSize: '0.85rem', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {post.content}
                     </p>
@@ -183,11 +183,11 @@ export default function Home() {
       {/* CTA */}
       <section style={{
         padding: '5rem 0',
-        background: 'linear-gradient(135deg, rgba(255,102,0,0.15) 0%, rgba(255,102,0,0.05) 100%)',
-        borderTop: '1px solid rgba(255,102,0,0.2)',
+        background: 'linear-gradient(135deg, rgba(233,124,48,0.15) 0%, rgba(233,124,48,0.05) 100%)',
+        borderTop: '1px solid rgba(233,124,48,0.2)',
       }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Bebas Neue', fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '1rem' }}>
+          <h2 style={{ fontFamily: 'Poppins', fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '1rem' }}>
             GET INVOLVED WITH<br /><span style={{ color: 'var(--orange)' }}>THE FOXES</span>
           </h2>
           <p style={{ color: 'var(--gray)', maxWidth: 500, margin: '0 auto 2rem', lineHeight: 1.7 }}>

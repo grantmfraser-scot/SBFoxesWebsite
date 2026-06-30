@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer style={{
       background: 'var(--dark)',
-      borderTop: '1px solid rgba(255,102,0,0.2)',
+      borderTop: '1px solid rgba(233,124,48,0.2)',
       padding: '3rem 0 1.5rem',
       marginTop: 'auto',
     }}>
@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <FoxLogo size={36} />
-              <span style={{ fontFamily: 'Bebas Neue', fontSize: '1.1rem', color: 'var(--orange)' }}>S&B Foxes Colts FC</span>
+              <span style={{ fontFamily: 'Poppins', fontSize: '1.1rem', color: 'var(--orange)' }}>S&B Foxes Colts FC</span>
             </div>
             <p style={{ color: 'var(--gray)', fontSize: '0.85rem', lineHeight: 1.7 }}>
               Streatham & Balham Foxes Colts FC — developing the next generation of football talent in South London.
@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: 'Bebas Neue', fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--orange)' }}>Quick Links</h4>
+            <h4 style={{ fontFamily: 'Poppins', fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--orange)' }}>Quick Links</h4>
             {[['/', 'Home'], ['/fixtures', 'Fixtures & Results'], ['/table', 'League Table'], ['/gallery', 'Gallery'], ['/news', 'News'], ['/contact', 'Contact']].map(([to, label]) => (
               <Link key={to} to={to} style={{ display: 'block', color: 'var(--gray)', fontSize: '0.85rem', marginBottom: '0.5rem', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.target.style.color = 'var(--orange)'}
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: 'Bebas Neue', fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--orange)' }}>The Club</h4>
+            <h4 style={{ fontFamily: 'Poppins', fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--orange)' }}>The Club</h4>
             <p style={{ color: 'var(--gray)', fontSize: '0.85rem', lineHeight: 1.7 }}>
               Playing in the South London Youth Football League.<br />
               Home ground: Tooting Bec Common<br />
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: 'Bebas Neue', fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--orange)' }}>Social Media</h4>
+            <h4 style={{ fontFamily: 'Poppins', fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--orange)' }}>Social Media</h4>
             <p style={{ color: 'var(--gray)', fontSize: '0.85rem', marginBottom: '1rem' }}>Social feeds coming soon!</p>
             <Link to="/contact" className="btn btn-outline" style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}>Get In Touch</Link>
           </div>

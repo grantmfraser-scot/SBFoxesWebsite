@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import About from './pages/About'
 import Fixtures from './pages/Fixtures'
 import Table from './pages/Table'
 import Gallery from './pages/Gallery'
@@ -17,6 +18,7 @@ export default function App() {
       <main style={{ flex: 1 }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/fixtures" element={<Fixtures />} />
           <Route path="/table" element={<Table />} />
           <Route path="/gallery" element={<Gallery />} />

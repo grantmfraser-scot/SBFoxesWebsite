@@ -23,8 +23,8 @@ function Login({ onLogin }) {
 
   return (
     <div style={{ paddingTop: 70, minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ background: 'var(--dark2)', border: '1px solid rgba(255,102,0,0.2)', borderRadius: 12, padding: '2.5rem', width: '100%', maxWidth: 380 }}>
-        <h1 style={{ fontFamily: 'Bebas Neue', fontSize: '2rem', marginBottom: '0.25rem' }}>Admin <span style={{ color: 'var(--orange)' }}>Login</span></h1>
+      <div style={{ background: 'var(--dark2)', border: '1px solid rgba(233,124,48,0.2)', borderRadius: 12, padding: '2.5rem', width: '100%', maxWidth: 380 }}>
+        <h1 style={{ fontFamily: 'Poppins', fontSize: '2rem', marginBottom: '0.25rem' }}>Admin <span style={{ color: 'var(--orange)' }}>Login</span></h1>
         <p style={{ color: 'var(--gray)', fontSize: '0.85rem', marginBottom: '2rem' }}>Streatham & Balham Foxes Colts FC</p>
 
         <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -78,8 +78,8 @@ function PostEditor({ post, onSave, onCancel }) {
   const inputStyle = { width: '100%', padding: '0.75rem 1rem', borderRadius: 6, background: 'var(--dark)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', fontSize: '0.9rem' }
 
   return (
-    <div style={{ background: 'var(--dark2)', border: '1px solid rgba(255,102,0,0.2)', borderRadius: 8, padding: '1.5rem', marginBottom: '1rem' }}>
-      <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '1.4rem', marginBottom: '1rem' }}>{post?.id ? 'Edit Post' : 'New Post'}</h3>
+    <div style={{ background: 'var(--dark2)', border: '1px solid rgba(233,124,48,0.2)', borderRadius: 8, padding: '1.5rem', marginBottom: '1rem' }}>
+      <h3 style={{ fontFamily: 'Poppins', fontSize: '1.4rem', marginBottom: '1rem' }}>{post?.id ? 'Edit Post' : 'New Post'}</h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <input placeholder="Title *" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} style={inputStyle} />
         <textarea placeholder="Content *" rows={8} value={form.content} onChange={e => setForm(f => ({ ...f, content: e.target.value }))} style={{ ...inputStyle, resize: 'vertical' }} />
@@ -122,8 +122,8 @@ function GalleryUploader({ onDone }) {
   }
 
   return (
-    <div style={{ background: 'var(--dark2)', border: '1px solid rgba(255,102,0,0.2)', borderRadius: 8, padding: '1.5rem', marginBottom: '1rem' }}>
-      <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '1.4rem', marginBottom: '1rem' }}>Upload Photos</h3>
+    <div style={{ background: 'var(--dark2)', border: '1px solid rgba(233,124,48,0.2)', borderRadius: 8, padding: '1.5rem', marginBottom: '1rem' }}>
+      <h3 style={{ fontFamily: 'Poppins', fontSize: '1.4rem', marginBottom: '1rem' }}>Upload Photos</h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <input type="file" accept="image/*" multiple onChange={e => setFiles(Array.from(e.target.files))} style={{ color: 'var(--gray)' }} />
         {files.length > 0 && (
@@ -190,10 +190,10 @@ export default function Admin() {
   return (
     <div style={{ paddingTop: 70, minHeight: '100vh' }}>
       {/* Admin header */}
-      <div style={{ background: 'var(--dark)', borderBottom: '1px solid rgba(255,102,0,0.2)', padding: '1.5rem 0' }}>
+      <div style={{ background: 'var(--dark)', borderBottom: '1px solid rgba(233,124,48,0.2)', padding: '1.5rem 0' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <h1 style={{ fontFamily: 'Bebas Neue', fontSize: '1.8rem' }}>Admin <span style={{ color: 'var(--orange)' }}>Dashboard</span></h1>
+            <h1 style={{ fontFamily: 'Poppins', fontSize: '1.8rem' }}>Admin <span style={{ color: 'var(--orange)' }}>Dashboard</span></h1>
             <p style={{ color: 'var(--gray)', fontSize: '0.8rem' }}>Streatham & Balham Foxes Colts FC</p>
           </div>
           <button onClick={logout} className="btn btn-outline" style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}>
@@ -209,7 +209,7 @@ export default function Admin() {
             <button key={t.key} onClick={() => setTab(t.key)} style={{
               display: 'flex', alignItems: 'center', gap: '0.4rem',
               padding: '0.6rem 1.25rem', borderRadius: '6px 6px 0 0', border: 'none',
-              background: tab === t.key ? 'rgba(255,102,0,0.15)' : 'transparent',
+              background: tab === t.key ? 'rgba(233,124,48,0.15)' : 'transparent',
               color: tab === t.key ? 'var(--orange)' : 'var(--gray)',
               fontWeight: 700, fontSize: '0.85rem',
               borderBottom: tab === t.key ? '2px solid var(--orange)' : '2px solid transparent',
@@ -295,7 +295,7 @@ export default function Admin() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {contacts?.map(c => (
               <div key={c.id} style={{
-                background: 'var(--dark2)', border: `1px solid ${c.read ? 'rgba(255,255,255,0.06)' : 'rgba(255,102,0,0.3)'}`,
+                background: 'var(--dark2)', border: `1px solid ${c.read ? 'rgba(255,255,255,0.06)' : 'rgba(233,124,48,0.3)'}`,
                 borderRadius: 8, padding: '1.25rem',
                 opacity: c.read ? 0.7 : 1,
               }}>

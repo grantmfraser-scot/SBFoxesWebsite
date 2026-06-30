@@ -30,8 +30,8 @@ export default function Contact() {
   return (
     <div style={{ paddingTop: 70, minHeight: '100vh' }}>
       <div style={{
-        background: 'linear-gradient(180deg, rgba(255,102,0,0.15) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,102,0,0.2)',
+        background: 'linear-gradient(180deg, rgba(233,124,48,0.15) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(233,124,48,0.2)',
         padding: '3rem 0 2rem',
       }}>
         <div className="container">
@@ -45,13 +45,13 @@ export default function Contact() {
 
           {/* Info panel */}
           <div>
-            <h2 style={{ fontFamily: 'Bebas Neue', fontSize: '1.8rem', marginBottom: '1.5rem' }}>
+            <h2 style={{ fontFamily: 'Poppins', fontSize: '1.8rem', marginBottom: '1.5rem' }}>
               STREATHAM &amp; BALHAM<br /><span style={{ color: 'var(--orange)' }}>FOXES COLTS FC</span>
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(255,102,0,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(233,124,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <MapPin size={18} style={{ color: 'var(--orange)' }} />
                 </div>
                 <div>
@@ -61,7 +61,7 @@ export default function Contact() {
               </div>
 
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(255,102,0,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(233,124,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Mail size={18} style={{ color: 'var(--orange)' }} />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div style={{ marginTop: '2.5rem', padding: '1.5rem', background: 'var(--dark2)', borderRadius: 8, border: '1px solid rgba(255,102,0,0.15)' }}>
+            <div style={{ marginTop: '2.5rem', padding: '1.5rem', background: 'var(--dark2)', borderRadius: 8, border: '1px solid rgba(233,124,48,0.15)' }}>
               <p style={{ color: 'var(--gray)', fontSize: '0.9rem', lineHeight: 1.7 }}>
                 Whether you're a parent interested in joining, a local business wanting to sponsor the team, or just a supporter — we'd love to hear from you!
               </p>
@@ -83,7 +83,7 @@ export default function Contact() {
             {status === 'sent' ? (
               <div style={{ textAlign: 'center', padding: '3rem', background: 'rgba(76,175,80,0.1)', border: '1px solid rgba(76,175,80,0.3)', borderRadius: 8 }}>
                 <CheckCircle size={48} style={{ color: '#4caf50', margin: '0 auto 1rem' }} />
-                <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '1.8rem', marginBottom: '0.5rem' }}>Message Sent!</h3>
+                <h3 style={{ fontFamily: 'Poppins', fontSize: '1.8rem', marginBottom: '0.5rem' }}>Message Sent!</h3>
                 <p style={{ color: 'var(--gray)' }}>We'll get back to you as soon as possible.</p>
                 <button className="btn btn-outline" style={{ marginTop: '1.5rem' }} onClick={() => setStatus('idle')}>
                   Send Another

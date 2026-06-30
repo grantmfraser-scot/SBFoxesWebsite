@@ -38,7 +38,7 @@ export default function NewsPost() {
           {format(parseISO(post.created_at), 'EEEE dd MMMM yyyy')}
         </div>
 
-        <h1 style={{ fontFamily: 'Bebas Neue', fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1 }}>
+        <h1 style={{ fontFamily: 'Poppins', fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1 }}>
           {post.title}
         </h1>
 

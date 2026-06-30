@@ -9,8 +9,8 @@ export default function News() {
   return (
     <div style={{ paddingTop: 70, minHeight: '100vh' }}>
       <div style={{
-        background: 'linear-gradient(180deg, rgba(255,102,0,0.15) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,102,0,0.2)',
+        background: 'linear-gradient(180deg, rgba(233,124,48,0.15) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(233,124,48,0.2)',
         padding: '3rem 0 2rem',
       }}>
         <div className="container">
@@ -46,7 +46,7 @@ export default function News() {
                 <div style={{ fontSize: '0.75rem', color: 'var(--orange)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   {format(parseISO(post.created_at), 'EEEE dd MMMM yyyy')}
                 </div>
-                <h2 style={{ fontFamily: 'Bebas Neue', fontSize: '1.5rem', marginBottom: '0.75rem', lineHeight: 1.1 }}>{post.title}</h2>
+                <h2 style={{ fontFamily: 'Poppins', fontSize: '1.5rem', marginBottom: '0.75rem', lineHeight: 1.1 }}>{post.title}</h2>
                 <p style={{ color: 'var(--gray)', fontSize: '0.875rem', lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {post.content}
                 </p>

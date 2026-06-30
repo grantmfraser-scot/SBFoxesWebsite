@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react'
 
 const links = [
   { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
   { to: '/fixtures', label: 'Fixtures' },
   { to: '/table', label: 'Table' },
   { to: '/gallery', label: 'Gallery' },
@@ -27,9 +28,9 @@ export default function Navbar() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      background: scrolled ? 'rgba(13,13,13,0.97)' : 'rgba(13,13,13,0.7)',
+      background: scrolled ? 'rgba(14,29,51,0.97)' : 'rgba(14,29,51,0.7)',
       backdropFilter: 'blur(12px)',
-      borderBottom: scrolled ? '1px solid rgba(255,102,0,0.3)' : '1px solid transparent',
+      borderBottom: scrolled ? '1px solid rgba(233,124,48,0.3)' : '1px solid transparent',
       transition: 'all 0.3s',
     }}>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 70 }}>
@@ -37,7 +38,7 @@ export default function Navbar() {
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <FoxLogo size={42} />
           <div>
-            <div style={{ fontFamily: 'Bebas Neue', fontSize: '1.25rem', letterSpacing: '0.05em', lineHeight: 1 }}>
+            <div style={{ fontFamily: 'Poppins', fontSize: '1.25rem', letterSpacing: '0.05em', lineHeight: 1 }}>
               <span style={{ color: 'var(--orange)' }}>S&B</span> Foxes Colts
             </div>
             <div style={{ fontSize: '0.6rem', color: 'var(--gray)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
@@ -57,7 +58,7 @@ export default function Navbar() {
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
               color: location.pathname === l.to ? 'var(--orange)' : 'rgba(255,255,255,0.8)',
-              background: location.pathname === l.to ? 'rgba(255,102,0,0.12)' : 'transparent',
+              background: location.pathname === l.to ? 'rgba(233,124,48,0.12)' : 'transparent',
               transition: 'all 0.2s',
             }}>{l.label}</Link>
           ))}
@@ -72,8 +73,8 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div style={{
-          background: 'rgba(13,13,13,0.98)',
-          borderTop: '1px solid rgba(255,102,0,0.2)',
+          background: 'rgba(14,29,51,0.98)',
+          borderTop: '1px solid rgba(233,124,48,0.2)',
           padding: '1rem 1.5rem',
         }}>
           {links.map(l => (
@@ -103,6 +104,20 @@ export default function Navbar() {
 }
 
 export function FoxLogo({ size = 40 }) {
+  const [imgOk, setImgOk] = useState(true)
+  if (imgOk) {
+    return (
+      <img
+        src="/images/badge.png"
+        alt="Streatham & Balham Foxes Colts FC badge"
+        width={size}
+        height={size}
+        style={{ objectFit: 'contain' }}
+        onError={() => setImgOk(false)}
+      />
+    )
+  }
+  // Fallback crest, shown until the real badge is saved to public/images/badge.png
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
       <circle cx="50" cy="50" r="48" fill="var(--orange)" />
