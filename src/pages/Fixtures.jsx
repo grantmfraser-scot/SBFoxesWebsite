@@ -81,8 +81,10 @@ export default function Fixtures() {
           <h1 className="section-title">FIXTURES &amp; <span>RESULTS</span></h1>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <p style={{ color: 'var(--gray)', fontSize: '0.85rem' }}>
-              Data from FA Fulltime · {data?.lastUpdated ? `Updated ${new Date(data.lastUpdated).toLocaleString()}` : 'Loading...'}
-              {data?.isMock && <span style={{ color: 'var(--orange)', marginLeft: '0.5rem' }}>(sample data — FA site may be unavailable)</span>}
+              {data?.source === 'fa-live' && <>Live from FA Full-Time · </>}
+              {data?.source === 'manual' && <>Updated by the club · </>}
+              {data?.lastUpdated ? `Updated ${new Date(data.lastUpdated).toLocaleString()}` : 'Loading...'}
+              {data?.source === 'sample' && <span style={{ color: 'var(--orange)', marginLeft: '0.5rem' }}>(sample data — live FA data not yet available)</span>}
             </p>
             <button className="btn btn-outline" style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }} onClick={refresh} disabled={refreshing}>
               <RefreshCw size={14} className={refreshing ? 'spinning' : ''} /> Refresh

@@ -22,7 +22,9 @@ export default function Table() {
         <div className="container">
           <h1 className="section-title">LEAGUE <span>TABLE</span></h1>
           <p style={{ color: 'var(--gray)', fontSize: '0.85rem' }}>
-            {data?.isMock ? 'Sample data — live data pulled from FA Fulltime' : `Updated ${new Date(data?.lastUpdated).toLocaleString()}`}
+            {data?.source === 'sample'
+              ? 'Sample data — live FA Full-Time data not yet available'
+              : `${data?.source === 'fa-live' ? 'Live from FA Full-Time · ' : data?.source === 'manual' ? 'Updated by the club · ' : ''}Updated ${data?.lastUpdated ? new Date(data.lastUpdated).toLocaleString() : ''}`}
           </p>
         </div>
       </div>

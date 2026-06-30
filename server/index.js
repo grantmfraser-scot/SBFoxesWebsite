@@ -6,7 +6,7 @@ import fs from 'fs'
 import multer from 'multer'
 import cron from 'node-cron'
 import db from './db.js'
-import { getFixturesAndResults, getLeagueTable } from './faProxy.js'
+import { getFixturesAndResults, getLeagueTable } from './faScraper.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -140,6 +140,41 @@ app.post('/api/admin/login', (req, res) => {
 app.get('/api/admin/all-posts', requireAuth, (req, res) => {
   const posts = db.prepare('SELECT * FROM posts ORDER BY created_at DESC').all()
   res.json(posts)
+})
+
+// ── FA data: manual-override management (fallback for when scraping is off) ────
+function setSetting(key, value) {
+  const existing = db.prepare('SELECT value FROM settings WHERE key = ?').get(key)
+  if (existing) db.prepare('UPDATE settings SET value=? WHERE key=?').run(value, key)
+  else db.prepare('INSERT INTO settings (key, value) VALUES (?, ?)').run(key, value)
+}
+
+app.get('/api/admin/fa', requireAuth, (req, res) => {
+  const get = (k) => (db.prepare('SELECT value FROM settings WHERE key = ?').get(k) || {}).value
+  res.json({
+    enabled: get('fa_manual_enabled') === '1',
+    fixtures: get('fa_manual_fixtures') || '[]',
+    results: get('fa_manual_results') || '[]',
+    table: get('fa_manual_table') || '[]',
+  })
+})
+
+app.post('/api/admin/fa', requireAuth, (req, res) => {
+  const { enabled, fixtures, results, table } = req.body
+  // Validate that the provided fields parse as JSON arrays before saving.
+  for (const [name, val] of [['fixtures', fixtures], ['results', results], ['table', table]]) {
+    if (val === undefined) continue
+    try {
+      if (!Array.isArray(JSON.parse(val))) throw new Error('not an array')
+    } catch {
+      return res.status(400).json({ error: `${name} must be a valid JSON array` })
+    }
+  }
+  if (enabled !== undefined) setSetting('fa_manual_enabled', enabled ? '1' : '0')
+  if (fixtures !== undefined) setSetting('fa_manual_fixtures', fixtures)
+  if (results !== undefined) setSetting('fa_manual_results', results)
+  if (table !== undefined) setSetting('fa_manual_table', table)
+  res.json({ ok: true })
 })
 
 // Refresh FA data every 30 minutes
